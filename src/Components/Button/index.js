@@ -1,10 +1,28 @@
-import { Component} from "react"
+import { Component } from "react"
+import PropTypes from "prop-types"
 
 class Button extends Component {
+  
+  //copmortamento padrão
+  static defaultProps = {
+    titulo: "Padrão",
+    descricao: "Padrão"
+  }
+  
+  //tipagem
+  static propTypes = {
+    titulo: PropTypes.string,
+    descricao: PropTypes.string
+    // descricao: PropTypes.string.isRequired
+  }
+
   render() {
     return (
-
-      <button>{this.props.children}</button>
+      <>
+        <p>Titulo: {this.props.titulo}</p>
+        <p>Descrissao: {this.props.descricao}</p>
+        <button>{this.props.children}</button>
+      </>
     )
   }
 }

@@ -1,0 +1,2 @@
+Aula 08 instalação do componente prop-types
+  npm install prop-types
