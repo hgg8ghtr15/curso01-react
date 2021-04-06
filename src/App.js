@@ -5,9 +5,28 @@ import {FuncaoATeste} from "./Components/Button"// Exportar função auto declar
 import Button from "./Components/Button" // importando classe formato Defalt
 
 class App extends Component {
+
+  //class fields
+  state = {
+    contador: 0,
+    nome: "",
+  }
+
+  // Arrowfunction
+  adicionar = () =>{
+    // console.log("Precionado")
+    this.setState({contador: this.state.contador + 1})
+  }
+
+  adiconarNome = (event) =>{
+    this.setState({nome: event.target.value})
+  }
+
   render() {
 
     FuncaoATeste()
+    //Destruct
+    let {contador, nome} = this.state
 
     return (
       <div className="app">
@@ -17,12 +36,18 @@ class App extends Component {
           <Button titulo="Botão Salvar" descricao="Salvar os componentes">Salvar</Button>
           <br></br>
 
-          <Button titulo={1} descricao="Excluir os componentes">Excluir</Button>
+          <Button titulo={"botão excluir"} descricao="Excluir os componentes">Excluir</Button>
           <br></br>
 
-          <Button>Defalt</Button>
+          <Button >Defalt</Button>
           <br></br>
-          
+
+          <Button press={this.adicionar}>State</Button>
+          <p>Contador : {contador}</p>
+          <br></br>
+
+          <input onChange={this.adiconarNome}></input>
+          <p>{nome}</p>
         </header>
       </div>
     )

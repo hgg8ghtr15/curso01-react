@@ -2,7 +2,7 @@ import { Component } from "react"
 import PropTypes from "prop-types"
 
 class Button extends Component {
-  
+
   //copmortamento padrão
   static defaultProps = {
     titulo: "Padrão",
@@ -21,7 +21,7 @@ class Button extends Component {
       <>
         <p>Titulo: {this.props.titulo}</p>
         <p>Descrissao: {this.props.descricao}</p>
-        <button>{this.props.children}</button>
+        <button onClick={this.props.press}>{this.props.children}</button>
       </>
     )
   }
