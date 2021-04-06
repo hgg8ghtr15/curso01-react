@@ -29,7 +29,7 @@ class App extends Component {
 
   adiconarIdadeMais = () => {
     let {idade} = this.state
-    this.setState({ idade: idade+1 })
+    this.setState({ idade: parseInt(idade)+1 })
   }
 
   render() {
@@ -62,7 +62,7 @@ class App extends Component {
           
           <br></br>
           <label>Idade</label>
-          <input type="number" onChange={this.adiconarIdade}></input>
+          <input type="number" onChange={this.adiconarIdade} value={idade}></input>
           <p>Idade: {idade}</p>
           <Button press={this.adiconarIdadeMais}>+ idade</Button>
         </header>
