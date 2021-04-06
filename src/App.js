@@ -3,6 +3,7 @@ import './App.css';
 import { Component } from "react"
 import { FuncaoATeste } from "./Components/Button"// Exportar função auto declarativa
 import Button from "./Components/Button" // importando classe formato Defalt
+import {Link} from "react-router-dom"
 
 class App extends Component {
 
@@ -43,6 +44,9 @@ class App extends Component {
         <header className="App-header">
           <p>Bem Vindo ao react.</p>
 
+          <Link to="/personagem/1">Personagem</Link>
+          <br></br>
+
           <Button titulo="Botão Salvar" descricao="Salvar os componentes">Salvar</Button>
           <br></br>
 
@@ -59,7 +63,7 @@ class App extends Component {
           <label>Nome</label>
           <input onChange={this.adiconarNome}></input>
           <p>{nome}</p>
-          
+
           <br></br>
           <label>Idade</label>
           <input type="number" onChange={this.adiconarIdade} value={idade}></input>

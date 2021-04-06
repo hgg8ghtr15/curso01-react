@@ -27,6 +27,10 @@
 .App-header p{
   margin: 0px;
 }
+.App-header a{
+  color: red;
+  text-decoration: none;
+}
 
 .App-link {
   color: #61dafb;
